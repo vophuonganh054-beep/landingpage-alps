@@ -20,12 +20,13 @@ const apiKey = process.env.GEMINI_API_KEY;
 let aiClient: GoogleGenAI | null = null;
 if (apiKey) {
   try {
-    aiClient = new GoogleGenAI();
+    aiClient = new GoogleGenAI({ apiKey: apiKey });
   } catch (err) {
     console.warn('Failed to initialize GoogleGenAI client:', err);
-  }
+ }
+} else {
+    console.warn('GEMINI_API_KEY is missing in environment variables!');
 }
-
 // Comprehensive Knowledge Base synchronized directly with https://alps.id.vn/
 const ALPS_SYSTEM_INSTRUCTION = `Bạn là Dược Sĩ & Chuyên Viên Da Liễu Cao Cấp của thương hiệu Alps Skincare • Pure Essence (Thương hiệu Dược mỹ phẩm thuần chay tế bào gốc sông băng Thụy Sĩ chưng cất tại Zurich - Website chính thức: https://alps.id.vn/).
 Phong cách tư vấn: Ấm áp, tận tâm, chuyên nghiệp chuẩn chuyên gia da liễu Thụy Sĩ. Xưng hô "mình" hoặc "ALPS" và gọi khách là "bạn" hoặc "nàng". Trả lời mạch lạc, súc tích, giải thích khoa học dễ hiểu bằng tiếng Việt.
