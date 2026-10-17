@@ -1,0 +1,22 @@
+/* Readable Vietnamese typography, served with the site. */
+html{font-size:16px;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{font-family:'Be Vietnam Pro',Arial,sans-serif!important;font-size:16px;line-height:1.65;color:#211c18;text-rendering:optimizeLegibility}
+input,textarea,select,button,label,.font-body{font-family:'Be Vietnam Pro',Arial,sans-serif!important}
+h1,h2,h3,h4,h5,h6,.font-headline,blockquote{font-family:'Lora',Georgia,serif!important;line-height:1.35!important;letter-spacing:0!important}
+p,li{line-height:1.7!important}
+button,a,input,select,textarea{line-height:1.5}
+input,select,textarea{font-size:16px!important}
+input::placeholder,textarea::placeholder{color:#655d56;opacity:1}
+.font-mono{font-family:ui-monospace,'Courier New',monospace!important;font-variant-numeric:tabular-nums}
+.text-xs{font-size:14px!important;line-height:1.6!important}
+.text-sm{font-size:15px!important;line-height:1.65!important}
+[class~="text-[9px]"],[class~="text-[10px]"],[class~="text-[10.5px]"],[class~="text-[11px]"],[class~="text-[12px]"]{font-size:13px!important;line-height:1.55!important}
+.text-on-surface-variant{color:#4d4540!important}
+[class~="text-on-surface-variant/70"],.text-neutral-400{color:#68605a!important}
+.tracking-widest{letter-spacing:.065em!important}
+.tracking-wider{letter-spacing:.035em!important}
+.material-symbols-outlined{font-family:'Material Symbols Outlined'!important;font-weight:300!important;font-style:normal!important;font-size:22px;line-height:1!important;letter-spacing:normal!important;text-transform:none!important;white-space:nowrap!important;word-wrap:normal!important;direction:ltr;font-feature-settings:'liga' 1!important;-webkit-font-feature-settings:'liga' 1!important;-webkit-font-smoothing:antialiased;display:inline-block;flex-shrink:0;vertical-align:middle}
+#demo-note{font-size:13px;line-height:1.6}#order-summary{font-size:15px}
+nav a{line-height:1.5!important}nav>div{flex-wrap:wrap;row-gap:12px}
+#derma-chat-messages{font-size:14px;line-height:1.65}
+@media(max-width:640px){h1{font-size:clamp(28px,7.5vw,38px)!important}h2{font-size:26px!important}h3{font-size:22px!important}h4{font-size:18px!important}#modal-welcome>div{max-height:90dvh}#modal-welcome h3{font-size:22px!important}}

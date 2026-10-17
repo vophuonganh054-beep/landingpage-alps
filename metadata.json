@@ -1,0 +1,8 @@
+{
+  "name": "Remix ALPS Botanicals - Radiance Glow Serum Thụy Sĩ",
+  "description": "Landing page chính thức của ALPS Botanicals - Tinh hoa dược liệu Thụy Sĩ, Radiance Glow Serum phục hồi và tái sinh làn da căng bóng chuẩn Glass Skin.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,189 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #fbf9f6;
+  --color-surface: #fbf9f6;
+  --color-primary: #16120f;
+  --color-primary-container: #2b2623;
+  --color-secondary: #725b38;
+  --color-secondary-fixed: #fedeb2;
+  --color-secondary-fixed-dim: #e0c298;
+  --color-error: #ba1a1a;
+  --color-surface-container: #efeeeb;
+  --color-surface-container-low: #f5f3f0;
+  --color-surface-container-lowest: #ffffff;
+  --color-outline-variant: #d0c4be;
+  --color-on-surface-variant: #4d4540;
+  --font-headline: 'Lora', serif;
+  --font-body: 'Be Vietnam Pro', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+@layer base {
+  button:not(:disabled), a {
+    cursor: pointer;
+  }
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+.material-symbols-outlined.fill-icon {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Shimmer Sweep Animation */
+@keyframes shimmerSweep {
+  0% { transform: translateX(-120%) skewX(-20deg); }
+  30%, 100% { transform: translateX(220%) skewX(-20deg); }
+}
+
+.lux-shimmer-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.lux-shimmer-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: 0;
+  width: 60%;
+  height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(254, 222, 178, 0.55), rgba(255, 255, 255, 0.6), transparent);
+  animation: shimmerSweep 2.4s infinite ease-in-out;
+  pointer-events: none;
+}
+
+/* CTA Heartbeat Glow */
+@keyframes heartbeatGlow {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 6px 20px rgba(114, 91, 56, 0.35);
+  }
+  14% {
+    transform: scale(1.025);
+    box-shadow: 0 10px 30px rgba(186, 26, 26, 0.4);
+  }
+  28% {
+    transform: scale(1.01);
+  }
+  42% {
+    transform: scale(1.035);
+    box-shadow: 0 12px 34px rgba(212, 175, 55, 0.6);
+  }
+  70% {
+    transform: scale(1);
+  }
+}
+
+.cta-heartbeat-glow {
+  animation: heartbeatGlow 2.5s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+/* Scarcity Bar Striped Animation */
+@keyframes stockStripes {
+  from { background-position: 0 0; }
+  to { background-position: 32px 0; }
+}
+
+@keyframes alpsStockShine {
+  0%, 15% { transform: translateX(-160%) skewX(-20deg); }
+  75%, 100% { transform: translateX(800%) skewX(-20deg); }
+}
+
+.scarcity-bar-stripes {
+  position: relative;
+  overflow: hidden;
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.35) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.35) 50%,
+    rgba(255, 255, 255, 0.35) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 32px 32px;
+  animation: stockStripes 1s linear infinite;
+}
+
+.scarcity-bar-stripes::after {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 20%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  animation: alpsStockShine 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Product Floating Motion */
+@keyframes alpsLiveFloat {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, var(--float-lift, -8px), 0); }
+}
+
+@keyframes alpsLiveMini {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.alps-product-float {
+  animation: alpsLiveFloat 7s ease-in-out infinite;
+  will-change: transform;
+}
+
+.alps-product-mini {
+  animation: alpsLiveMini 5s ease-in-out infinite;
+}
+
+/* Gift shake animation */
+@keyframes alpsGiftGentleShake {
+  0%, 62%, 100% { transform: rotate(0) translateY(0); }
+  68% { transform: rotate(-12deg) translateY(-2px); }
+  74% { transform: rotate(12deg) translateY(-2px); }
+  80% { transform: rotate(-8deg); }
+  86% { transform: rotate(8deg); }
+  92% { transform: rotate(-3deg); }
+}
+
+.alps-gift-wiggle {
+  animation: alpsGiftGentleShake 4s ease-in-out infinite;
+  transform-origin: 50% 80%;
+}
+
+/* Radar pulse ring */
+@keyframes radarPulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+
+.radar-ring {
+  animation: radarPulse 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Halo breath behind hero bottle */
+@keyframes alpsHaloBreath {
+  0%, 100% { opacity: 0.55; transform: scale(0.96); }
+  50% { opacity: 0.9; transform: scale(1.08); }
+}
+
+.alps-halo-breath {
+  animation: alpsHaloBreath 5s ease-in-out infinite;
+}
+
+/* Gloss button effect */
+@keyframes alpsContactGlow {
+  0%, 100% { box-shadow: 0 4px 14px rgba(214, 172, 102, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.4); }
+  50% { box-shadow: 0 6px 22px rgba(214, 172, 102, 0.65), 0 0 0 2px rgba(214, 172, 102, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.7); }
+}
+
+.alps-contact-gloss {
+  animation: alpsContactGlow 3s ease-in-out infinite;
+}
